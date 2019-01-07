@@ -1,0 +1,13 @@
+{
+    "name": "taggart/brain-games",
+    "authors": [
+        {
+            "name": "DmitryLT",
+            "email": "dim.sha@yandex.ru"
+        }
+    ],
+    "require": {},
+    "bin": [
+        "bin/bran-games"
+    ]
+}
