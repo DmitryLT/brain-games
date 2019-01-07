@@ -1,12 +1,20 @@
 {
     "name": "taggart/brain-games",
+    "type": "project",
+    "description": "short project to learn composer",
+    "keywords": ["game", "text"],
     "authors": [
         {
             "name": "DmitryLT",
             "email": "dim.sha@yandex.ru"
         }
     ],
-    "require": {},
+    "autoload": {
+        "files": ["src/Cli.php"]
+    },
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.11"
+    },
     "bin": [
         "bin/brain-games"
     ]
