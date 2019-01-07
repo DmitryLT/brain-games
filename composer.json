@@ -8,6 +8,6 @@
     ],
     "require": {},
     "bin": [
-        "bin/bran-games"
+        "bin/brain-games"
     ]
 }
