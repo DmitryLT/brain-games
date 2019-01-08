@@ -9,11 +9,17 @@
             "email": "dim.sha@yandex.ru"
         }
     ],
+    "scripts": {
+        "phpcs": "phpcs"
+    },
     "autoload": {
         "files": ["src/Cli.php"]
     },
     "require": {
         "wp-cli/php-cli-tools": "^0.11.11"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*"
     },
     "bin": [
         "bin/brain-games"
