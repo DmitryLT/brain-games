@@ -1,6 +1,6 @@
 {
     "name": "taggart/brain-games",
-    "type": "library",
+    "type": "project",
     "description": "short project to learn composer",
     "keywords": ["game", "text"],
     "authors": [
