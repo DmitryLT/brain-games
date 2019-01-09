@@ -90,7 +90,7 @@ function isCorrect(string $str)
 function welcome()
 {
     line('Welcome to the Brain Game!');
-    line('Answer "yes" if number even otherwise answer "no".');
+    line('What is the result of the expression?');
     line('');
 }
 /**
