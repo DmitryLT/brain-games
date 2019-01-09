@@ -24,26 +24,29 @@ function init()
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line('');
+    $rounds = 3;
 
-    for ($i = 0; $i <= 2; $i++) {
-        $randomInt = rand();
-        line('Question: %s', $randomInt);
+    for ($i = 1; $i <= $rounds; $i++) {
+        $question = rand();
+        line('Question: %s', $question);
         $answer = prompt('Your answer');
-        $correctAnswer = isCorrect($randomInt);
+        $correctAnswer = isCorrect($question);
     
         if ($answer == $correctAnswer) {
             line('Correct!');
-            if ($i == 2) {
-                line('Congratulations, %s', $name);
-                return;
-            }
         } else {
-            line('%s is wrong answer ;(. Correct answer was %s.', $answer, $correctAnswer);
-            line("Let's try again, %s.", $name);
             break;
         }
     }
-    return;
+    
+    if ($answer == $correctAnswer) {
+        line('Congratulations, %s.', $name);
+        return;
+    } else {
+        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
+        line("Let's try again, %s.", $name);
+        return;
+    }
 }
 /**
  * Функция определения четности числа
@@ -51,11 +54,7 @@ function init()
  */
 function isEven(int $number)
 {
-    if ($number % 2 === 0) {
-        return true;
-    } else {
-        return false;
-    }
+    return $number % 2 === 0;
 }
 /**
  * Функция для определения правильности ответа
@@ -63,11 +62,5 @@ function isEven(int $number)
  */
 function isCorrect(int $number)
 {
-    if (isEven($number)) {
-        $result = "yes";
-    } else {
-        $result = "no";
-    }
-
-    return $result;
+    return $result = isEven($number) ? 'yes' : 'no';
 }
