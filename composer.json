@@ -15,7 +15,8 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/gameEven.php"
+            "games/gameEven.php",
+            "games/gameCalc.php"
         ]
     },
     "require": {
@@ -26,6 +27,7 @@
     },
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ]
 }
