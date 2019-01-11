@@ -7,8 +7,8 @@ https://asciinema.org/a/Wacc2EUamTMG4VH4jKcMME1Qg
 Аскинема запуска игры brain-even:
 https://asciinema.org/a/BEY52ZPWSZwjpt8H2BFUdlmNy
 
-Аскинема шага 5 - запуска игры brain-even и brain-calc исправленный 0.5.4:
-https://asciinema.org/a/9hl0D7UCA17wpBzPniMQXLZ3E
+Аскинема шага 5 - запуска игры brain-even и brain-calc исправленный 0.5.5:
+https://asciinema.org/a/OnZxUi3nVFVwJPAr6nCB7nLsJ
 
 Бейджи Code_Climate:
 [![Code Climate](https://api.codeclimate.com/v1/badges/13151ace08272d312d42/maintainability)](https://codeclimate.com/github/DmitryLT/project-lvl1-s408/maintainability)
