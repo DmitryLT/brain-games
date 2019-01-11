@@ -46,9 +46,9 @@ function init($description, $dataFromGame)
     }
 }
 
-function welcome($rules)
+function welcome($description)
 {
     line('Welcome to the Brain Game!');
-    line($rules);
+    line($description);
     line('');
 }
