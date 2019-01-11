@@ -16,8 +16,8 @@
         "files": [
             "src/Cli.php",
             "src/Run.php",
-            "games/gameEven.php",
-            "games/gameCalc.php"
+            "src/games/gameEven.php",
+            "src/games/gameCalc.php"
         ]
     },
     "require": {

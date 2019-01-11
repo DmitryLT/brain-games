@@ -19,63 +19,27 @@ use BrainGames\Games\GameEven;
  * @return null
  */
 
-function init($gameName)
+function init($rules, $dataFromGame)
 {
-    if ($gameName == 'even') {
-        welcome(GameEven\RULES);
-    } elseif ($gameName == 'calc') {
-        welcome(GameCalc\RULES);
-    }
+    welcome($rules);
     $name = getName();
-    $rounds = GameCalc\ROUNDS;
-    if ($gameName == 'even') {
-        $result = logicEven($rounds);
-    } elseif ($gameName == 'calc') {
-        $result = logicCalc($rounds);
+    $rounds = 3;
+    for ($i = 1; $i <= $rounds; $i++) {
+        $dataObj = $dataFromGame();
+        $question = $dataObj[1];
+        $correctAnswer = $dataObj[0];
+        $answer = getAnswer($question);
+
+        if ($answer == $correctAnswer) {
+            line('Correct!');
+            $result = [$answer, $correctAnswer];
+        } else {
+            $result = [$answer, $correctAnswer];
+            break;
+        }
     }
-    
+
     gameOver($result, $name);
-}
-/**
- * Функция логики игры brain-calc
- * @return array
- */
-function logicCalc($rounds)
-{
-    for ($i = 1; $i <= $rounds; $i++) {
-        $operand = getRandomOperand(GameCalc\OPERANDS);
-        $firstRand = rand(0, 100);
-        $secondRand = rand(0, 100);
-        $question = "{$firstRand} {$operand} {$secondRand}";
-        $answer = getAnswer($question);
-        $correctAnswer = isCorrectCalc($question);
-    
-        if ($answer == $correctAnswer) {
-            line('Correct!');
-        } else {
-            return $result = [$answer, $correctAnswer];
-        }
-    }
-    return $result = [$answer, $correctAnswer];
-}
-/**
- * Функция логики игры brain-even
- * @return array
- */
-function logicEven($rounds)
-{
-    for ($i = 1; $i <= $rounds; $i++) {
-        $question = rand();
-        $answer = getAnswer($question);
-        $correctAnswer = isCorrectEven($question);
-    
-        if ($answer == $correctAnswer) {
-            line('Correct!');
-        } else {
-            return $result = [$answer, $correctAnswer];
-        }
-    }
-    return $result = [$answer, $correctAnswer];
 }
 /**
  * Функция получения ответа от игрока
@@ -84,57 +48,8 @@ function logicEven($rounds)
 function getAnswer($question)
 {
     line('Question: %s', $question);
-    return $answer = prompt('Your answer');
+    return prompt('Your answer');
 }
-/**
- * Функция определения четности числа
- * @return bool
- */
-function isEven(int $number)
-{
-    return $number % 2 === 0;
-}
-/**
- * Функция для определения правильности ответа brain-calc
- * @return correctAnswer
- */
-function isCorrectCalc(string $str)
-{
-    $result = 0;
-    $operand = '';
-    $firstNumber = '';
-    $secondNumber = '';
-    $array = explode(' ', $str);
-    foreach ($array as $value) {
-        if ($value == '+' || $value == '-' || $value == '*') {
-            $operand = $value;
-        } elseif ($firstNumber == '') {
-            $firstNumber = $value;
-        } else {
-            $secondNumber = $value;
-        }
-    }
-    switch ($operand) {
-        case '+':
-            return $result = $firstNumber + $secondNumber;
-            break;
-        case '-':
-            return $result = $firstNumber - $secondNumber;
-            break;
-        case '*':
-            return $result = $firstNumber * $secondNumber;
-        break;
-    }
-}
-/**
- * Функция для определения правильности ответа brain-even
- * @return correctAnswer
- */
-function isCorrectEven(int $number)
-{
-    return $result = isEven($number) ? 'yes' : 'no';
-}
-
 /**
  * Функция выводит приветствие и правила игры
  * @return null
@@ -151,12 +66,9 @@ function welcome($rules)
  */
 function gameOver($result, $name)
 {
-    if (count($result) != 2) {
-        return;
-    } else {
+    $answerAndCorrectAnswer = 2;
         $answer = $result[0];
         $correctAnswer = $result[1];
-    }
     if ($answer == $correctAnswer) {
         line('Congratulations, %s.', $name);
         return;
@@ -176,13 +88,4 @@ function getName()
     line("Hello, %s!", $name);
     line('');
     return $name;
-}
-/**
- * Функция генерирует случайный операнд
- * @return string
- */
-function getRandomOperand($operands)
-{
-    $numberOfOperand = rand(0, 2);
-    return $operands[$numberOfOperand];
 }
