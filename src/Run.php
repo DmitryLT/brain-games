@@ -14,78 +14,41 @@ use function \cli\prompt;
 use BrainGames\Games\GameCalc;
 use BrainGames\Games\GameEven;
 
-/**
- * Функция инициализации
- * @return null
- */
+const ROUNDS = 3;
 
-function init($rules, $dataFromGame)
+function init($description, $dataFromGame)
 {
-    welcome($rules);
-    $name = getName();
-    $rounds = 3;
-    for ($i = 1; $i <= $rounds; $i++) {
-        $dataObj = $dataFromGame();
-        $question = $dataObj[1];
-        $correctAnswer = $dataObj[0];
-        $answer = getAnswer($question);
+    welcome($description);
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
+    line('');
+    for ($i = 1; $i <= ROUNDS; $i++) {
+        [$correctAnswer, $question] = $dataFromGame();
+        line('Question: %s', $question);
+        $answer = prompt('Your answer');
 
         if ($answer == $correctAnswer) {
             line('Correct!');
-            $result = [$answer, $correctAnswer];
+            $result = ['answer' => $answer, 'correctAnswer' => $correctAnswer];
         } else {
-            $result = [$answer, $correctAnswer];
+            $result = ['answer' => $answer, 'correctAnswer' => $correctAnswer];
             break;
         }
     }
 
-    gameOver($result, $name);
+    if ($result['answer'] == $result['correctAnswer']) {
+        line('Congratulations, %s.', $name);
+        return;
+    } else {
+        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $result['answer'], $result['correctAnswer']);
+        line("Let's try again, %s.", $name);
+        return;
+    }
 }
-/**
- * Функция получения ответа от игрока
- * @return string
- */
-function getAnswer($question)
-{
-    line('Question: %s', $question);
-    return prompt('Your answer');
-}
-/**
- * Функция выводит приветствие и правила игры
- * @return null
- */
+
 function welcome($rules)
 {
     line('Welcome to the Brain Game!');
     line($rules);
     line('');
-}
-/**
- * Функция выводит сообщение об окончании игры
- * @return null
- */
-function gameOver($result, $name)
-{
-    $answerAndCorrectAnswer = 2;
-        $answer = $result[0];
-        $correctAnswer = $result[1];
-    if ($answer == $correctAnswer) {
-        line('Congratulations, %s.', $name);
-        return;
-    } else {
-        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
-        line("Let's try again, %s.", $name);
-        return;
-    }
-}
-/**
- * Функция выводит имя и присваивает его в переменную
- * @return $name
- */
-function getName()
-{
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line('');
-    return $name;
 }

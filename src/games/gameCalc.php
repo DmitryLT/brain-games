@@ -3,13 +3,13 @@
 namespace BrainGames\Games\GameCalc;
 use function BrainGames\Run\init;
 
-const RULES = 'What is the result of the expression?';
-const OPERANDS = ['+', '-', '*'];
+const DESCRIPTION = 'What is the result of the expression?';
+const OPERATORS = ['+', '-', '*'];
 
 function logicCalc()
 {
-    $operand = getRandomOperand(OPERANDS);
-    $isCorectCalc = function () use ($operand) {
+    $generateData = function () {
+        $operand = getRandomOperator(OPERATORS);
         $firstRand = rand(0, 100);
         $secondRand = rand(0, 100);
         $question = "{$firstRand} {$operand} {$secondRand}";
@@ -27,14 +27,12 @@ function logicCalc()
 
         return [$correctAnswer, $question];
     };
-    init(RULES, $isCorectCalc);
+    init(DESCRIPTION, $generateData);
 }
 
-/** Функция генерирует случайный операнд
- * @return string
- */
-function getRandomOperand($operands)
+function getRandomOperator(array $operators)
 {
-    $numberOfOperand = rand(0, 2);
-    return $operands[$numberOfOperand];
+    $quantityOfOperators = count($operators) - 1;
+    $numberOfOperator = rand(0, $quantityOfOperators);
+    return $operators[$numberOfOperator];
 }
