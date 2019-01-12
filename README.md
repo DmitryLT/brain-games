@@ -13,7 +13,7 @@ https://asciinema.org/a/OnZxUi3nVFVwJPAr6nCB7nLsJ
 Аскнима 6 шага - запуск игры brain-gcd 0.6.0:
 https://asciinema.org/a/dwozrwMthJW1MNyAddqhVRY4T
 
-Аскнима 7 шага - запуск игры brain-gcd 0.7.0:
+Аскнима 7 шага - запуск игры brain-progression 0.7.0:
 https://asciinema.org/a/W72tgBIFtMm4L84lZSEu7AGFY
 
 Бейджи Code_Climate:
