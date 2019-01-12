@@ -18,7 +18,8 @@
             "src/Run.php",
             "src/Games/Even.php",
             "src/Games/Calc.php",
-            "src/Games/Gcd.php"
+            "src/Games/Gcd.php",
+            "src/Games/Progression.php"
         ]
     },
     "require": {
@@ -31,6 +32,7 @@
         "bin/brain-games",
         "bin/brain-even",
         "bin/brain-calc",
-        "bin/brain-gcd"
+        "bin/brain-gcd",
+        "bin/brain-progression"
     ]
 }
