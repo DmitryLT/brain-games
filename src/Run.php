@@ -11,8 +11,6 @@
 namespace BrainGames\Run;
 use function \cli\line;
 use function \cli\prompt;
-use BrainGames\Games\GameCalc;
-use BrainGames\Games\GameEven;
 
 const ROUNDS = 3;
 
@@ -29,18 +27,16 @@ function init($description, $dataFromGame)
 
         if ($answer == $correctAnswer) {
             line('Correct!');
-            $result = ['answer' => $answer, 'correctAnswer' => $correctAnswer];
         } else {
-            $result = ['answer' => $answer, 'correctAnswer' => $correctAnswer];
             break;
         }
     }
 
-    if ($result['answer'] == $result['correctAnswer']) {
+    if ($answer == $correctAnswer) {
         line('Congratulations, %s.', $name);
         return;
     } else {
-        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $result['answer'], $result['correctAnswer']);
+        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
         line("Let's try again, %s.", $name);
         return;
     }

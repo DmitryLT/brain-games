@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\GameCalc;
+namespace BrainGames\Games\Calc;
 use function BrainGames\Run\init;
 
 const DESCRIPTION = 'What is the result of the expression?';
