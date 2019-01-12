@@ -16,6 +16,12 @@ https://asciinema.org/a/dwozrwMthJW1MNyAddqhVRY4T
 Аскинима 7 шага - запуск игры brain-progression 0.7.0:
 https://asciinema.org/a/W72tgBIFtMm4L84lZSEu7AGFY
 
+Исправленная аскинема запуска 6 шага:
+https://asciinema.org/a/HMCLN07SrpAdofl2JbbBEDKWu
+
+Исправленная аскинема запуска 7 шага:
+https://asciinema.org/a/vbBc6CBJ9lYEQAFNrIwQdTHGl
+
 Аскинима 8 шага - запуск игры brain-prime 0.8.0:
 https://asciinema.org/a/VyEPsDZyIGH7frlSbp2w5HPvN
 
