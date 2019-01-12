@@ -13,6 +13,9 @@ https://asciinema.org/a/OnZxUi3nVFVwJPAr6nCB7nLsJ
 Аскнима 6 шага - запуск игры brain-gcd 0.6.0:
 https://asciinema.org/a/dwozrwMthJW1MNyAddqhVRY4T
 
+Аскнима 7 шага - запуск игры brain-gcd 0.7.0:
+https://asciinema.org/a/W72tgBIFtMm4L84lZSEu7AGFY
+
 Бейджи Code_Climate:
 [![Code Climate](https://api.codeclimate.com/v1/badges/13151ace08272d312d42/maintainability)](https://codeclimate.com/github/DmitryLT/project-lvl1-s408/maintainability)
 
