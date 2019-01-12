@@ -9,33 +9,22 @@ const LENGTH_OF_PROGRESSION = 10;
 function logicProgression()
 {
     $generateData = function () {
-        [$question, $step, $IndexWithoutNumber] = getRandomProgression(LENGTH_OF_PROGRESSION);
-        $questionArray = explode(' ', $question);
-        if ($IndexWithoutNumber != 0) {
-            $correctAnswer = $questionArray[$IndexWithoutNumber - 1] + $step;
-        } else {
-            $correctAnswer = $questionArray[$IndexWithoutNumber + 1] - $step;
-        }
+        $progression = getRandomProgression();
+        $IndexWithoutNumber = rand(0, LENGTH_OF_PROGRESSION - 1);
+        $correctAnswer = $progression[$IndexWithoutNumber];
+        $progression[$IndexWithoutNumber] = '..';
+        $question = implode(' ', $progression);
         return [$correctAnswer, $question];
     };
     init(DESCRIPTION, $generateData);
 }
 
-function getRandomProgression($length)
+function getRandomProgression()
 {
-    $progression = [];
-    $IndexWithoutNumber = rand(0, $length - 1);
     $step = rand(1, 5);
-    $currentValue = rand(0, 10);
-    for ($i = 0; $i < $length; $i++) {
-        $progression[] = $currentValue;
-        if ($i == $IndexWithoutNumber) {
-            $progression[$i] = '..';
-            $currentValue += $step;
-            continue;
-        }
-        $currentValue += $step;
+    $start = rand(1, 10);
+    for ($i = 0; $i < LENGTH_OF_PROGRESSION; $i++) {
+        $progression[] = $start + $step * $i;
     }
-    $strProgression = implode(' ', $progression);
-    return [$strProgression, $step, $IndexWithoutNumber];
+    return $progression;
 }

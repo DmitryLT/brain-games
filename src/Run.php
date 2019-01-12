@@ -28,18 +28,12 @@ function init($description, $dataFromGame)
         if ($answer == $correctAnswer) {
             line('Correct!');
         } else {
-            break;
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
+            line("Let's try again, %s.", $name);
+            return;
         }
     }
-
-    if ($answer == $correctAnswer) {
-        line('Congratulations, %s.', $name);
-        return;
-    } else {
-        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
-        line("Let's try again, %s.", $name);
-        return;
-    }
+    line('Congratulations, %s.', $name);
 }
 
 function welcome($description)
