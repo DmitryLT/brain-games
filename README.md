@@ -20,7 +20,7 @@ To launch games type in command line:
 * brain-even: https://asciinema.org/a/BEY52ZPWSZwjpt8H2BFUdlmNy
 * brain-calc: https://asciinema.org/a/OnZxUi3nVFVwJPAr6nCB7nLsJ
 * brain-gcd: https://asciinema.org/a/HMCLN07SrpAdofl2JbbBEDKWu
-* brain-progression: https://asciinema.org/a/vbBc6CBJ9lYEQAFNrIwQdTHGl
+* brain-progression: https://asciinema.org/a/aC9GFmMcAWg1VbtoXXjaz4yQr
 * brain-prime: https://asciinema.org/a/VyEPsDZyIGH7frlSbp2w5HPvN
 
 [![Code Climate](https://api.codeclimate.com/v1/badges/13151ace08272d312d42/maintainability)](https://codeclimate.com/github/DmitryLT/project-lvl1-s408/maintainability)
