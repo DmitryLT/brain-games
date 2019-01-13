@@ -9,7 +9,9 @@ const LENGTH_OF_PROGRESSION = 10;
 function logicProgression()
 {
     $generateData = function () {
-        $progression = getRandomProgression();
+        $step = rand(1, 5);
+        $start = rand(1, 10);
+        $progression = getRandomProgression($start, $step, LENGTH_OF_PROGRESSION);
         $IndexWithoutNumber = rand(0, LENGTH_OF_PROGRESSION - 1);
         $correctAnswer = $progression[$IndexWithoutNumber];
         $progression[$IndexWithoutNumber] = '..';
@@ -19,11 +21,9 @@ function logicProgression()
     init(DESCRIPTION, $generateData);
 }
 
-function getRandomProgression()
+function getRandomProgression($start, $step, $length)
 {
-    $step = rand(1, 5);
-    $start = rand(1, 10);
-    for ($i = 0; $i < LENGTH_OF_PROGRESSION; $i++) {
+    for ($i = 0; $i < $length; $i++) {
         $progression[] = $start + $step * $i;
     }
     return $progression;
